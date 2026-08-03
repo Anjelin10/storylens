@@ -29,5 +29,6 @@ function register() {
     });
     console.log("Registration data:", { name, email, password });
     localStorage.setItem('user', JSON.stringify({ name, email, password }));
+    sessionStorage.setItem("currentUser", JSON.stringify({ name, email }));
     window.location.href = 'login.html';
 }

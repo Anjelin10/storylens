@@ -19,18 +19,20 @@
         <nav class="nav-links">
             <ul>
                 <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="movies.html" class="nav-link">Search</a></li>
                 <li><a href="favorites.html" class="nav-link">My List</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
             </ul>
         </nav>
         <div class="actions">
-            <a href="movies.html" class="icon-btn search-trigger"><i data-lucide="search"></i></a>
-            <button class="icon-btn notification-trigger">
-                <span class="badge-dot"></span>
-                <i data-lucide="bell"></i>
-            </button>
-            <a href="login.html" class="user-avatar">AL</a>
+            <a href="movies.html" class="icon-btn search-trigger">
+                <i data-lucide="search"></i>
+            </a>
+            <div class="user-menu">
+                <div id="user-avatar" class="user-avatar"></div>
+                <div class="user-dropdown" id="user-dropdown">
+                    <a href="login.html" id="logout-btn">Logout</a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -104,24 +106,8 @@
                 <span class="brand-white">STORY</span><span class="brand-gold">LENS</span>
             </div>
             <p>Your ultimate cinematic discovery companion. Find your next obsession.</p>
-        </div>
-        <div class="footer-links-col">
-            <h3>DISCOVER</h3>
-            <a href="index.html">Home</a>
-            <a href="#">Trending</a>
-            <a href="#">Top Rated</a>
-        </div>
-        <div class="footer-links-col">
-            <h3>BROWSE</h3>
-            <a href="movies.html">Search</a>
-            <a href="#">Categories</a>
-            <a href="#">All Movies</a>
-        </div>
-        <div class="footer-links-col">
-            <h3>COMPANY</h3>
-            <a href="about.html">About StoryLens</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Privacy Policy</a>
+            <br>
+            <p>&copy; 2023 StoryLens. All rights reserved.</p>
         </div>
     </footer>
 
@@ -130,5 +116,6 @@
     <script>
         lucide.createIcons();
     </script>
+    <script src="js/home.js"></script>
 </body>
 </html>

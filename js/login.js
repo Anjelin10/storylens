@@ -15,6 +15,8 @@ function login() {
         alert("Invalid email or password.");
         return;
     }
-    alert("Login successful!");
+    addEventListener('click', function() {
+        alert("Login successful!");
+    });
     window.location.href = 'index.html';
 }
