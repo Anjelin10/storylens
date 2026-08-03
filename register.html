@@ -3,26 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Register - StoryLens</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div>
-        <h2>Create Your StoryLens Account</h2>
-        <p>Join thousands of movie lovers and start building your personalized movie collection.</p>
-        <form>
-            <p>Full Name</p>
-            <input type="text" placeholder="abc"/>
-            <p>Email Address</p>
-            <input type="email" placeholder="abc@gmail.com"/>
-            <p>Phone Number</p>
-            <input type="tel" placeholder="987568****"/>
-            <p>Password</p>
-            <input type="password" placeholder="******"/>
-            <p>Confirm Password</p>
-            <input type="password" placeholder="******"/>
-            <br/>
-            <input type="checkbox"><span>I agree to the Terms & Privacy Policy</span>
-        </form>
+    <div class="auth-layout">
+        <div class="auth-hero" style="background-image: url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2070&auto=format&fit=crop');">
+            <div class="auth-label">DISCOVER</div>
+        </div>
+        <div class="auth-form-container">
+            <div class="auth-form-wrapper">
+                <div class="auth-header">
+                    <div class="logo" style="justify-content: center; margin-bottom: 24px;">
+                        <span class="logo-icon"><i data-lucide="film"></i></span>
+                        <span class="brand-white">STORY</span><span class="brand-gold">LENS</span>
+                    </div>
+                    <h1>Create Account</h1>
+                    <p>Join thousands of movie lovers today.</p>
+                </div>
+                <form class="auth-form">
+                    <div class="input-group">
+                        <i data-lucide="user"></i>
+                        <input type="text" id="name" class="auth-input" placeholder="Full Name">
+                    </div>
+                    <div class="input-group">
+                        <i data-lucide="mail"></i>
+                        <input type="email" id="email" class="auth-input" placeholder="Email Address">
+                    </div>
+                    <div class="input-group">
+                        <i data-lucide="lock"></i>
+                        <input type="password" id="password" class="auth-input" placeholder="Password">
+                    </div>
+                    <div class="input-group">
+                        <i data-lucide="shield-check"></i>
+                        <input type="password" id="confirmPassword" class="auth-input" placeholder="Confirm Password">
+                    </div>
+                    <label class="checkbox-group" id="termsCheckbox">
+                        <input type="checkbox">
+                        <span>I agree to the Terms & Privacy Policy</span>
+                    </label>
+                    <button type="button" class="btn-primary btn-block" onclick="register()">Sign Up</button>
+                </form>
+                <div class="auth-footer">
+                    Already have an account? <a href="login.html">Sign In</a>
+                </div>
+            </div>
+        </div>
     </div>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="js/register.js"></script>
 </body>
 </html>

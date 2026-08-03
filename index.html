@@ -3,22 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STORYLENS</title>
+    <title>StoryLens - Discover Stories Beyond the Screen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <nav>
-        <img alt="logo"/>
-        <a href="index.html">Home</a>
-        <a href="movies.html">Movies</a>
-        <a href="favorites.html">Favorites</a>
-        <a href="about.html">About</a>
-        <a href="login.html">Login</a>
-        <a href="register.html">Register</a>
-    </nav>
-    <header>
-        <h3>Discover Stories Beyond the Screen.</h3>
-        <p>Explore trending blockbusters, timeless classics, and hidden gems from around the world. Search, discover, save your favorites, and experience cinema like never before.</p>
-        <button>Explore Movies</button>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon"><i data-lucide="film"></i></span>
+            <span class="brand-white">STORY</span><span class="brand-gold">LENS</span>
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="movies.html" class="nav-link">Search</a></li>
+                <li><a href="favorites.html" class="nav-link">My List</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <a href="movies.html" class="icon-btn search-trigger"><i data-lucide="search"></i></a>
+            <button class="icon-btn notification-trigger">
+                <span class="badge-dot"></span>
+                <i data-lucide="bell"></i>
+            </button>
+            <a href="login.html" class="user-avatar">AL</a>
+        </div>
     </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="metabar">
+                <span class="meta-pill">Action</span>
+                <span class="meta-pill">Sci-Fi</span>
+                <span class="meta-pill">2026</span>
+            </div>
+            <h1>The Last Protocol</h1>
+            <div class="hero-actions">
+                <button class="btn-primary"><i data-lucide="play"></i> Watch Now</button>
+                <button class="btn-secondary"><i data-lucide="heart"></i> Save</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section class="movie-section">
+        <div class="section-header">
+            <i data-lucide="trending-up"></i>
+            <h2>Trending Now</h2>
+        </div>
+        <div class="movie-row">
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1535016120720-40c746765306?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
+            </div>
+        </div>
+    </section>
+
+    <!-- Continue Watching Section -->
+    <section class="movie-section">
+        <div class="section-header">
+            <i data-lucide="clock"></i>
+            <h2>Continue Watching</h2>
+        </div>
+        <div class="movie-row">
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1585951237318-9ea5e175b891?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
+                <div class="progress-track"><div class="progress-fill" style="width: 65%;"></div></div>
+            </div>
+            <div class="movie-card">
+                <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
+                <div class="progress-track"><div class="progress-fill" style="width: 25%;"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <div class="logo">
+                <span class="logo-icon"><i data-lucide="film"></i></span>
+                <span class="brand-white">STORY</span><span class="brand-gold">LENS</span>
+            </div>
+            <p>Your ultimate cinematic discovery companion. Find your next obsession.</p>
+        </div>
+        <div class="footer-links-col">
+            <h3>DISCOVER</h3>
+            <a href="index.html">Home</a>
+            <a href="#">Trending</a>
+            <a href="#">Top Rated</a>
+        </div>
+        <div class="footer-links-col">
+            <h3>BROWSE</h3>
+            <a href="movies.html">Search</a>
+            <a href="#">Categories</a>
+            <a href="#">All Movies</a>
+        </div>
+        <div class="footer-links-col">
+            <h3>COMPANY</h3>
+            <a href="about.html">About StoryLens</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/data.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

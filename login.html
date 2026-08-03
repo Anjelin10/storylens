@@ -3,20 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - StoryLens</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <div>
-        <h2>Welcome 👋</h2>
-        <h3>Sign in to continue exploring and discovering amazing movies.</h3>
-        <form>
-            <p>Enter your Mail id</p>
-            <input placeholder="abc@gmail.com" type="email"/>
-            <p>Enter your Password</p>
-            <input placeholder="******" type="password"/>
-            <button>LOGIN</button>
-        </form>
-        <a>Don't have an account? Register</a>
+    <div class="auth-layout">
+        <div class="auth-hero">
+            <div class="auth-label">"Cinema is a matter of what's in the frame and what's out." — Martin Scorsese</div>
+        </div>
+        <div class="auth-form-container">
+            <div class="auth-form-wrapper">
+                <div class="auth-header">
+                    <div class="logo" style="justify-content: center; margin-bottom: 24px;">
+                        <span class="logo-icon"><i data-lucide="film"></i></span>
+                        <span class="brand-white">STORY</span><span class="brand-gold">LENS</span>
+                    </div>
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to continue your cinematic journey.</p>
+                </div>
+                <form class="auth-form">
+                    <div class="input-group">
+                        <i data-lucide="mail"></i>
+                        <input type="email" id="email" class="auth-input" placeholder="alex@storylens.io">
+                    </div>
+                    <div class="input-group">
+                        <i data-lucide="lock"></i>
+                        <input type="password" id="password" class="auth-input" placeholder="Password">
+                    </div>
+                    <button type="button" class="btn-primary btn-block" onclick="login()">Sign In</button>
+                </form>
+                <div class="auth-footer">
+                    Don't have an account? <a href="register.html">Create one</a>
+                </div>
+            </div>
+        </div>
     </div>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="js/login.js"></script>
 </body>
 </html>

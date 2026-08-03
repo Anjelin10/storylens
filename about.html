@@ -3,84 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>About - StoryLens</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <section class="about-section">
-    <div class="container">
-        <h1 class="tag">About StoryLens</h1>
-        <h3>Discover Stories Beyond the Screen.</h3>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon"><i data-lucide="film"></i></span>
+            <span class="brand-white">STORY</span><span class="brand-gold">LENS</span>
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="movies.html" class="nav-link">Search</a></li>
+                <li><a href="favorites.html" class="nav-link">My List</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <a href="movies.html" class="icon-btn search-trigger"><i data-lucide="search"></i></a>
+            <button class="icon-btn notification-trigger">
+                <span class="badge-dot"></span>
+                <i data-lucide="bell"></i>
+            </button>
+            <a href="login.html" class="user-avatar">AL</a>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <h1>Discover Stories Beyond the Screen.</h1>
         <p>
             StoryLens is a modern movie discovery platform built for people who
             love exploring films from around the world. Whether you're searching
             for the latest blockbusters, timeless classics, or hidden gems,
             StoryLens brings everything together through a clean, fast, and
-            intuitive experience powered by real-time movie data.
+            intuitive experience.
         </p>
-        <p>
-            Designed with performance and simplicity in mind, StoryLens helps
-            users browse trending releases, explore detailed movie information,
-            discover talented cast members, save personal favourites, and find
-            recommendations tailored to their interests—all within a responsive
-            and immersive interface.
-        </p>
-        <p>
-            Our goal is simple: make discovering your next favourite movie as
-            enjoyable as watching it.
-        </p>
-    </div>
     </section>
-    <section class="mission">
-        <h3>Our Mission</h3>
-        <p>
-            We believe every movie tells a story worth discovering. StoryLens was
-            created to simplify movie exploration by combining modern web
-            technologies with reliable real-time data. Our mission is to provide an
-            engaging platform where users can easily search, explore, organize, and
-            revisit the films they love.
-        </p>
-        <section class="why-us">
-        <h3>Why Choose StoryLens?</h3>
-        <div class="features">
-            <div class="feature">
-                <h3>Real-Time Movie Database</h3>
-                <p>
-                    Browse thousands of movies with up-to-date ratings, release
-                    information, genres, trailers, and cast details.
-                </p>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon-wrapper">
+                <i data-lucide="database" style="width: 32px; height: 32px;"></i>
             </div>
-            <div class="feature">
-                <h3>Personalized Experience</h3>
-                <p>
-                    Save favourites, create your own watchlist, and quickly continue
-                    exploring the movies that matter to you.
-                </p>
+            <h3>Real-Time Database</h3>
+            <p>Browse thousands of movies with up-to-date ratings, trailers, and details.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-wrapper">
+                <i data-lucide="heart" style="width: 32px; height: 32px;"></i>
             </div>
-            <div class="feature">
-                <h3>Powerful Discovery</h3>
-                <p>
-                    Explore trending releases, top-rated films, popular actors, and
-                    curated recommendations based on your interests.
-                </p>
+            <h3>Personalized</h3>
+            <p>Save favourites, create watchlists, and continue exploring movies tailored to you.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-wrapper">
+                <i data-lucide="compass" style="width: 32px; height: 32px;"></i>
             </div>
-            <div class="feature">
-                <h3>Built for Every Device</h3>
-                <p>
-                    Enjoy a seamless experience across desktop, tablet, and mobile
-                    with responsive layouts and smooth interactions.
-                </p>
+            <h3>Powerful Discovery</h3>
+            <p>Explore trending releases, top-rated films, and curated recommendations.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon-wrapper">
+                <i data-lucide="monitor-smartphone" style="width: 32px; height: 32px;"></i>
             </div>
+            <h3>Cross Platform</h3>
+            <p>Enjoy a seamless experience across desktop, tablet, and mobile with responsive layouts.</p>
+        </div>
+    </div>
+
+    <section class="stats-section">
+        <div class="stat-item">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Movies Available</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">5M+</div>
+            <div class="stat-label">Active Users</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">4.9</div>
+            <div class="stat-label">Average Rating</div>
         </div>
     </section>
+
+    <section class="cta-section">
+        <h2>Your Next Favourite Movie Starts Here.</h2>
+        <p>Make movie exploration simple, beautiful, and enjoyable.</p>
+        <a href="movies.html" class="btn-primary" style="display: inline-flex; width: auto;"><i data-lucide="compass"></i> Browse Films</a>
     </section>
-    <section class="about-end">
-        <h3>Your Next Favourite Movie Starts Here.</h3>
-        <p>
-        Whether you're planning your weekend watchlist or discovering timeless
-        cinematic masterpieces, StoryLens makes movie exploration simple,
-        beautiful, and enjoyable.
-        </p>
-        <a href="index.html" class="btn">Explore Movies</a>
-    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <div class="logo">
+                <span class="logo-icon"><i data-lucide="film"></i></span>
+                <span class="brand-white">STORY</span><span class="brand-gold">LENS</span>
+            </div>
+            <p>Your ultimate cinematic discovery companion. Find your next obsession.</p>
+        </div>
+        <div class="footer-links-col">
+            <h3>DISCOVER</h3>
+            <a href="index.html">Home</a>
+            <a href="#">Trending</a>
+            <a href="#">Top Rated</a>
+        </div>
+        <div class="footer-links-col">
+            <h3>BROWSE</h3>
+            <a href="movies.html">Search</a>
+            <a href="#">Categories</a>
+            <a href="#">All Movies</a>
+        </div>
+        <div class="footer-links-col">
+            <h3>COMPANY</h3>
+            <a href="about.html">About StoryLens</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
