@@ -37,64 +37,64 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="metabar">
-                <span class="meta-pill">Action</span>
-                <span class="meta-pill">Sci-Fi</span>
-                <span class="meta-pill">2026</span>
-            </div>
-            <h1>The Last Protocol</h1>
-            <div class="hero-actions">
-                <button class="btn-primary"><i data-lucide="play"></i> Watch Now</button>
-                <button class="btn-secondary"><i data-lucide="heart"></i> Save</button>
-            </div>
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" id="hero-content">
         </div>
     </section>
 
-    <!-- Trending Section -->
+    <!-- Trending Movies Section -->
+    <section class="movie-section">
+        <div class="section-header">
+            <i data-lucide="pictureInPicture2"></i>
+            <h2>Trending This Week</h2>
+        </div>
+        <div class="movie-row" id="trending-movies">
+            <!-- Movie cards will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Popular Movies Section -->
     <section class="movie-section">
         <div class="section-header">
             <i data-lucide="trending-up"></i>
-            <h2>Trending Now</h2>
+            <h2>Popular Movies</h2>
         </div>
-        <div class="movie-row">
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
-            </div>
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
-            </div>
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
-            </div>
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
-            </div>
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1535016120720-40c746765306?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
-            </div>
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
-            </div>
+        <div class="movie-row" id="popular-movies">
+            <!-- Movie cards will be dynamically inserted here -->
         </div>
     </section>
 
-    <!-- Continue Watching Section -->
+    <!-- Top Rated Section -->
     <section class="movie-section">
         <div class="section-header">
-            <i data-lucide="clock"></i>
-            <h2>Continue Watching</h2>
+            <i data-lucide="star"></i>
+            <h2>Top Rated Movies</h2>
         </div>
-        <div class="movie-row">
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1585951237318-9ea5e175b891?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
-                <div class="progress-track"><div class="progress-fill" style="width: 65%;"></div></div>
-            </div>
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=600&auto=format&fit=crop" alt="Movie Poster">
-                <div class="progress-track"><div class="progress-fill" style="width: 25%;"></div></div>
-            </div>
+        <div class="movie-row" id="top-rated-movies">
+            <!-- Movie cards will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Upcoming Section -->
+    <section class="movie-section">
+        <div class="section-header">
+            <i data-lucide="calendar"></i>
+            <h2>Upcoming Movies</h2>
+        </div>
+        <div class="movie-row" id="upcoming-movies">
+            <!-- Movie cards will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Now Playing Section -->
+    <section class="movie-section">
+        <div class="section-header">
+            <i data-lucide="play"></i>
+            <h2>Now Playing</h2>
+        </div>
+        <div class="movie-row" id="now-playing-movies">
+            <!-- Movie cards will be dynamically inserted here -->
         </div>
     </section>
 

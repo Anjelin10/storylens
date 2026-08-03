@@ -268,14 +268,6 @@ img {
 }
 
 /* Hero Section (Home) */
-.hero {
-  position: relative;
-  height: 85vh;
-  display: flex;
-  align-items: flex-end;
-  padding: 60px 5%;
-  background: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2025&auto=format&fit=crop') center/cover no-repeat;
-}
 
 .hero::after {
   content: '';
@@ -284,10 +276,27 @@ img {
   background: linear-gradient(to top, var(--bg-main) 10%, rgba(11, 11, 15, 0.3) 100%);
 }
 
-.hero-content {
-  position: relative;
-  z-index: 10;
-  max-width: 800px;
+.hero-content{
+    position:relative;
+    z-index:1;
+    max-width:700px;
+    padding:60px;
+}
+
+.hero{
+    position:relative;
+    height:600px;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    display:flex;
+    align-items:center;
+    padding-top:100px;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
 }
 
 .metabar {
@@ -308,15 +317,23 @@ img {
 }
 
 .hero h1 {
-  font-size: 72px;
+  font-size: 38px;
   line-height: 1.1;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   text-transform: uppercase;
+}
+.hero-overview{
+  font-size: 15px;
+  color: var(--text-light);
+  max-height: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .hero-actions {
   display: flex;
   gap: 16px;
+  padding-top: 15px;
 }
 
 .btn-primary {
@@ -325,7 +342,7 @@ img {
   padding: 16px 32px;
   border-radius: 30px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 13px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -379,6 +396,8 @@ img {
 }
 
 .movie-row {
+  padding-top:10px;
+  padding-left:5px;
   display: flex;
   gap: 24px;
   overflow-x: auto;
@@ -391,7 +410,8 @@ img {
 }
 
 .movie-card {
-  min-width: 200px;
+  max-width: 250px;
+  max-height: 450px;
   flex: 0 0 auto;
   cursor: pointer;
   transition: transform 0.3s;
