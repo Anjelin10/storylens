@@ -25,14 +25,16 @@ function Home() {
     getTrendingMovies().then(data => {
         if (data && data.results) {
             const trendingMoviesContainer = document.getElementById("trending-movies");
-            data.results.forEach(movie => {
+            data.results
+            .slice(0, 6)
+            .forEach(movie => {
             trendingMoviesContainer.innerHTML += `
                 <div class="movie-card">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-grid-info">
                         <div class="movie-grid-title">${movie.title}</div>
                         <div class="movie-grid-meta">
-                            <span>${movie.vote_average.toFixed(1)}/10</span>
+                            <span>⭐ ${movie.vote_average.toFixed(1)}/10</span>
                         </div>
                     </div>
                 </div>
@@ -45,14 +47,16 @@ function Home() {
     getPopularMovies().then(data => {
         if (data && data.results) {
             const popularMoviesContainer = document.getElementById("popular-movies");
-            data.results.forEach(movie => {
+            data.results
+            .slice(10, 16)
+            .forEach(movie => {
             popularMoviesContainer.innerHTML += `
                 <div class="movie-card">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-grid-info">
                         <div class="movie-grid-title">${movie.title}</div>
                         <div class="movie-grid-meta">
-                            <span>${movie.vote_average.toFixed(1)}/10</span>
+                            <span>⭐ ${movie.vote_average.toFixed(1)}/10</span>
                         </div>
                     </div>
                 </div>
@@ -65,14 +69,16 @@ function Home() {
     getTopRatedMovies().then(data => {
         if (data && data.results) {
             const topRatedMoviesContainer = document.getElementById("top-rated-movies");
-            data.results.forEach(movie => {
+            data.results
+            .slice(0, 6)
+            .forEach(movie => {
             topRatedMoviesContainer.innerHTML += `
                 <div class="movie-card">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-grid-info">
                         <div class="movie-grid-title">${movie.title}</div>
                         <div class="movie-grid-meta">
-                            <span>${movie.vote_average.toFixed(1)}/10</span>
+                            <span>⭐ ${movie.vote_average.toFixed(1)}/10</span>
                         </div>
                     </div>
                 </div>
@@ -85,14 +91,16 @@ function Home() {
     getUpcomingMovies().then(data => {
         if (data && data.results) {
             const upcomingMoviesContainer = document.getElementById("upcoming-movies");
-            data.results.forEach(movie => {
+            data.results
+            .slice(14, 23)
+            .forEach(movie => {
             upcomingMoviesContainer.innerHTML += `
                 <div class="movie-card">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-grid-info">
                         <div class="movie-grid-title">${movie.title}</div>
                         <div class="movie-grid-meta">
-                            <span>${movie.vote_average.toFixed(1)}/10</span>
+                            <span>⭐ ${movie.vote_average.toFixed(1)}/10</span>
                         </div>
                     </div>
                 </div>
@@ -105,14 +113,16 @@ function Home() {
     getNowPlayingMovies().then(data => {
         if (data && data.results) {
             const nowPlayingMoviesContainer = document.getElementById("now-playing-movies");
-            data.results.forEach(movie => {
+            data.results
+            .slice(3, 9)
+            .forEach(movie => {
             nowPlayingMoviesContainer.innerHTML += `
                 <div class="movie-card">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-grid-info">
                         <div class="movie-grid-title">${movie.title}</div>
                         <div class="movie-grid-meta">
-                            <span>${movie.vote_average.toFixed(1)}/10</span>
+                            <span>⭐ ${movie.vote_average.toFixed(1)}/10</span>
                         </div>
                     </div>
                 </div>
@@ -126,7 +136,7 @@ function Home() {
     if(!data || !data.results) return;
     const hero = document.getElementById("hero");
     const heroContent = document.getElementById("hero-content");
-    const heroMovies = data.results.slice(0,4);
+    const heroMovies = data.results.slice(1, 4);
     let current = 0;
     function renderHero(){
         const movie = heroMovies[current];

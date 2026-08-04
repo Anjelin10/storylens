@@ -24,9 +24,6 @@
             </ul>
         </nav>
         <div class="actions">
-            <a href="movies.html" class="icon-btn search-trigger">
-                <i data-lucide="search"></i>
-            </a>
             <div class="user-menu">
                 <div id="user-avatar" class="user-avatar"></div>
                 <div class="user-dropdown" id="user-dropdown">
@@ -42,77 +39,15 @@
             <input type="text" class="search-input" placeholder="Search for movies, actors, or genres...">
         </div>
         <div class="filters-row">
-            <button class="filter-pill active">All</button>
-            <button class="filter-pill">Action</button>
-            <button class="filter-pill">Comedy</button>
-            <button class="filter-pill">Drama</button>
-            <button class="filter-pill">Sci-Fi</button>
-            <button class="filter-pill">Thriller</button>
-            <button class="filter-pill">Horror</button>
+            <a class="filter-pill" data-filter="popular" href="movies.html?type=popular">Popular</a>
+            <a class="filter-pill" data-filter="top-rated" href="movies.html?type=top-rated">Top Rated</a>
+            <a class="filter-pill" data-filter="upcoming" href="movies.html?type=upcoming">Upcoming</a>
+            <a class="filter-pill" data-filter="trending" href="movies.html?type=trending">Trending</a>
         </div>
     </div>
 
-    <div class="movie-grid">
-        <div class="movie-grid-card">
-            <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=400&auto=format&fit=crop" alt="Poster">
-            <div class="movie-grid-info">
-                <div class="movie-grid-title">The Grand Adventure</div>
-                <div class="movie-grid-meta">
-                    <span>Action, Adventure</span>
-                    <span><i data-lucide="star" style="width: 14px; height:14px; color: var(--accent-gold); display: inline-block; vertical-align: text-bottom;"></i> 8.5</span>
-                </div>
-            </div>
-        </div>
-        <div class="movie-grid-card">
-            <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400&auto=format&fit=crop" alt="Poster">
-            <div class="movie-grid-info">
-                <div class="movie-grid-title">Neon Nights</div>
-                <div class="movie-grid-meta">
-                    <span>Sci-Fi, Cyberpunk</span>
-                    <span><i data-lucide="star" style="width: 14px; height:14px; color: var(--accent-gold); display: inline-block; vertical-align: text-bottom;"></i> 7.9</span>
-                </div>
-            </div>
-        </div>
-        <div class="movie-grid-card">
-            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=400&auto=format&fit=crop" alt="Poster">
-            <div class="movie-grid-info">
-                <div class="movie-grid-title">Classic Film Reel</div>
-                <div class="movie-grid-meta">
-                    <span>Documentary</span>
-                    <span><i data-lucide="star" style="width: 14px; height:14px; color: var(--accent-gold); display: inline-block; vertical-align: text-bottom;"></i> 9.1</span>
-                </div>
-            </div>
-        </div>
-        <div class="movie-grid-card">
-            <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=400&auto=format&fit=crop" alt="Poster">
-            <div class="movie-grid-info">
-                <div class="movie-grid-title">Zombie Apocalypse</div>
-                <div class="movie-grid-meta">
-                    <span>Horror, Thriller</span>
-                    <span><i data-lucide="star" style="width: 14px; height:14px; color: var(--accent-gold); display: inline-block; vertical-align: text-bottom;"></i> 6.8</span>
-                </div>
-            </div>
-        </div>
-        <div class="movie-grid-card">
-            <img src="https://images.unsplash.com/photo-1535016120720-40c746765306?q=80&w=400&auto=format&fit=crop" alt="Poster">
-            <div class="movie-grid-info">
-                <div class="movie-grid-title">Space Odyssey</div>
-                <div class="movie-grid-meta">
-                    <span>Sci-Fi, Drama</span>
-                    <span><i data-lucide="star" style="width: 14px; height:14px; color: var(--accent-gold); display: inline-block; vertical-align: text-bottom;"></i> 8.9</span>
-                </div>
-            </div>
-        </div>
-        <div class="movie-grid-card">
-            <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=400&auto=format&fit=crop" alt="Poster">
-            <div class="movie-grid-info">
-                <div class="movie-grid-title">Cinema Noir</div>
-                <div class="movie-grid-meta">
-                    <span>Crime, Mystery</span>
-                    <span><i data-lucide="star" style="width: 14px; height:14px; color: var(--accent-gold); display: inline-block; vertical-align: text-bottom;"></i> 8.2</span>
-                </div>
-            </div>
-        </div>
+    <div class="movie-grid" id="movie-container">
+        <!-- Movie cards will be dynamically inserted here --> 
     </div>
 
     <!-- Footer -->
@@ -133,6 +68,6 @@
     </script>
     <script src="js/api.js"></script>
     <script src="js/data.js"></script>
-    <script src="js/home.js"></script>
+    <script src="js/movie.js"></script>
 </body>
 </html>

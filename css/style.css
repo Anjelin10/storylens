@@ -273,7 +273,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, var(--bg-main) 10%, rgba(11, 11, 15, 0.3) 100%);
+  background: linear-gradient(to top, var(--bg-main) 10%, rgba(11, 11, 15, 0.3) 50%);
 }
 
 .hero-content{
@@ -374,8 +374,24 @@ img {
 }
 
 /* Movie Sections */
+.view-all{
+  margin-left:auto;
+  font-size:15px;
+  color:var(--text-primary);
+}
+.view-all:hover{
+  color:var(--accent-gold);
+  text-decoration: underline;
+}
 .movie-section {
   padding: 40px 5%;
+}
+.start-icon{
+  width: 14px;
+  height:14px; 
+  color: var(--accent-gold); 
+  display: inline-block; 
+  vertical-align: text-bottom;
 }
 
 .section-header {
