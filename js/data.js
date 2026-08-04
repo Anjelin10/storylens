@@ -62,12 +62,11 @@ async function getTrendingMovies(page = 1) {
 }
 getTrendingMovies()
 
-//Search Movies
+//Search Movies & Actors
 async function searchMovies(query){
-    const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`);
+    const response = await fetch(`${BASE_URL}/search/multi?api_key=${API_KEY}&query=${query}`);
     return await response.json();
 }
-searchMovies()
 
 //Movie Details
 async function getMovieData(id) {

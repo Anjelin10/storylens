@@ -46,34 +46,77 @@ async function loadMovies(page = 1) {
         return;
     }
     totalPages = data.total_pages;
-    data.results.forEach(movie => {
-        movieContainer.innerHTML += `
+    renderMoviesHTML(data.results);
+    loading = false;
+}
+
+function renderMoviesHTML(movies) {
+    let html = '';
+    movies.forEach(movie => {
+        html += `
             <div class="movie-grid-card" onclick="window.location.href='MovieDetails.html?id=${movie.id}'">
                     <img
                         src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
                         alt="${movie.title}"
+                        onerror="this.src='https://via.placeholder.com/250x375?text=No+Poster'"
                     >
                     <div class="movie-grid-info">
                         <div class="movie-grid-title">${movie.title}</div>
-                        <div class="movie-grid-meta" style="font-size: 12px; color: var(--accent-gold);">⭐ ${movie.vote_average.toFixed(1)}/10</div>
+                        <div class="movie-grid-meta" style="font-size: 12px; color: var(--accent-gold);">⭐ ${(movie.vote_average || 0).toFixed(1)}/10</div>
                     </div>
             </div>
         `;
     });
-    loading = false;
+    movieContainer.innerHTML += html;
+}
 
-    //SEARCH MOVIES
-    let movies = [];
-    movies = data.results;
-    const searchInput = document.getElementById("search-input");
+//SEARCH MOVIES
+const searchInput = document.querySelector(".search-input");
+let searchTimeout = null;
+let isSearching = false;
+
+if (searchInput) {
     searchInput.addEventListener("input", (e) => {
-        const text = e.target.value.toLowerCase();
-        const filtered = movies.filter(movie => {
-            return movie.title
-                .toLowerCase()
-                .includes(text);
-        });
-        renderMovies(filtered);
+        const text = e.target.value.trim().toLowerCase();
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(async () => {
+            if (text.length > 0) {
+                isSearching = true;
+                movieContainer.innerHTML = '';
+                try {
+                    const data = await searchMovies(text);
+                    if (data && data.results) {
+                        // Extract movies from search/multi (handle person known_for, and standard movies)
+                        let extractedMovies = [];
+                        data.results.forEach(item => {
+                            if (item.media_type === 'movie') {
+                                extractedMovies.push(item);
+                            } else if (item.media_type === 'person' && item.known_for) {
+                                item.known_for.forEach(kf => {
+                                    if (kf.media_type === 'movie') extractedMovies.push(kf);
+                                });
+                            }
+                        });
+                        
+                        // Deduplicate movies by id
+                        const uniqueMovies = Array.from(new Map(extractedMovies.map(m => [m.id, m])).values());
+                        
+                        if (uniqueMovies.length > 0) {
+                            renderMoviesHTML(uniqueMovies);
+                        } else {
+                            movieContainer.innerHTML = `<div style="grid-column: 1 / -1; width: 100%; text-align: center; padding: 40px; color: var(--text-secondary); font-size: 18px;">No movies found for "${text}"</div>`;
+                        }
+                    }
+                } catch (err) {
+                    console.error(err);
+                }
+            } else {
+                isSearching = false;
+                movieContainer.innerHTML = '';
+                currentPage = 1;
+                loadMovies(1);
+            }
+        }, 500);
     });
 }
 
@@ -86,6 +129,7 @@ window.addEventListener("scroll", () => {
     const windowHeight = window.innerHeight;
     const fullHeight = document.body.offsetHeight;
     if (
+        !isSearching &&
         scrollTop + windowHeight >= fullHeight - 300 &&
         !loading &&
         currentPage < totalPages
