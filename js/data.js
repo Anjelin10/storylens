@@ -67,3 +67,30 @@ async function searchMovies(query){
     const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}`);
     return await response.json();
 }
+searchMovies()
+
+//Movie Details
+async function getMovieData(id) {
+    try {
+        const [detailsRes,videosRes,creditsRes,imagesRes,reviewsRes,providersRes] = await Promise.all([
+            fetch(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`),
+            fetch(`${BASE_URL}/movie/${id}/videos?api_key=${API_KEY}`),
+            fetch(`${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`),
+            fetch(`${BASE_URL}/movie/${id}/images?api_key=${API_KEY}`),
+            fetch(`${BASE_URL}/movie/${id}/reviews?api_key=${API_KEY}`),
+            fetch(`${BASE_URL}/movie/${id}/watch/providers?api_key=${API_KEY}`)
+        ]);
+
+        const [details,videos,credits,images,reviews,providers] = await Promise.all([
+            detailsRes.json(),
+            videosRes.json(),
+            creditsRes.json(),
+            imagesRes.json(),
+            reviewsRes.json(),
+            providersRes.json()
+        ]);
+        return {details,videos,credits,images,reviews,providers};
+    } catch (err) {
+        console.error(err);
+    }
+}

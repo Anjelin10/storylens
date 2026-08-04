@@ -48,15 +48,15 @@ async function loadMovies(page = 1) {
     totalPages = data.total_pages;
     data.results.forEach(movie => {
         movieContainer.innerHTML += `
-            <div class="movie-grid-card">
-                <img
-                    src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
-                    alt="${movie.title}"
-                >
-                <div class="movie-grid-info">
-                    <div class="movie-grid-title">${movie.title}</div>
-                    <div class="movie-grid-meta">⭐ ${movie.vote_average.toFixed(1)}/10</div>
-                </div>
+            <div class="movie-grid-card" onclick="window.location.href='MovieDetails.html?id=${movie.id}'">
+                    <img
+                        src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
+                        alt="${movie.title}"
+                    >
+                    <div class="movie-grid-info">
+                        <div class="movie-grid-title">${movie.title}</div>
+                        <div class="movie-grid-meta" style="font-size: 12px; color: var(--accent-gold);">⭐ ${movie.vote_average.toFixed(1)}/10</div>
+                    </div>
             </div>
         `;
     });

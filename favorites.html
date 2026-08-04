@@ -35,30 +35,11 @@
 
     <div class="page-header" style="text-align: left; padding: 40px 5% 20px;">
         <h1 style="font-size: 32px; text-transform: uppercase;">Your Personal Collection</h1>
-        <p style="color: var(--text-secondary); margin-top: 8px;">2 saved films</p>
+        <p style="color: var(--text-secondary); margin-top: 8px;" id="fav-count">0 saved films</p>
     </div>
 
-    <div class="movie-grid">
-        <div class="movie-grid-card">
-            <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?q=80&w=400&auto=format&fit=crop" alt="Poster">
-            <div class="movie-grid-info">
-                <div class="movie-grid-title">Vintage Lens</div>
-                <div class="movie-grid-meta">
-                    <span>Drama, Romance</span>
-                    <span><i data-lucide="heart" style="width: 14px; height:14px; color: #ff4b4b; display: inline-block; vertical-align: text-bottom; fill: #ff4b4b;"></i></span>
-                </div>
-            </div>
-        </div>
-        <div class="movie-grid-card">
-            <img src="https://images.unsplash.com/photo-1585951237318-9ea5e175b891?q=80&w=400&auto=format&fit=crop" alt="Poster">
-            <div class="movie-grid-info">
-                <div class="movie-grid-title">The Director's Chair</div>
-                <div class="movie-grid-meta">
-                    <span>Documentary</span>
-                    <span><i data-lucide="heart" style="width: 14px; height:14px; color: #ff4b4b; display: inline-block; vertical-align: text-bottom; fill: #ff4b4b;"></i></span>
-                </div>
-            </div>
-        </div>
+    <div class="movie-grid" id="favorites-grid">
+        <!-- Dynamic content goes here -->
     </div>
 
     <!-- Footer -->
@@ -78,5 +59,6 @@
         lucide.createIcons();
     </script>
     <script src="js/home.js"></script>
+    <script src="js/favorites.js"></script>
 </body>
 </html>

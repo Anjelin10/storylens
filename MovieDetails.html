@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoryLens - Movie Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Global Loader -->
+    <div id="md-loader" style="position:fixed; top:0; left:0; width:100%; height:100%; background:var(--bg-main); z-index:9999; display:flex; justify-content:center; align-items:center; transition:opacity 0.3s ease;">
+        <div class="spinner" style="width:60px; height:60px; border:6px solid rgba(255,255,255,0.1); border-top-color:var(--accent-gold); border-radius:50%; animation:spin 1s linear infinite;"></div>
+    </div>
+    <style>@keyframes spin { 100% { transform: rotate(360deg); } }</style>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon"><i data-lucide="film"></i></span>
+            <span class="brand-white">STORY</span><span class="brand-gold">LENS</span>
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="favorites.html" class="nav-link">My List</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <div class="user-menu">
+                <div id="user-avatar" class="user-avatar"></div>
+                <div class="user-dropdown" id="user-dropdown">
+                    <a href="login.html" id="logout-btn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Details Container -->
+    <main class="md-container">
+        <div class="md-poster-wrapper">
+            <img src="" alt="Movie Poster" class="md-poster" id="md-poster">
+        </div>
+        
+        <div class="md-info">
+            <div class="md-tags" id="md-tags">
+                <!-- Tags will be dynamically injected here -->
+            </div>
+            
+            <h1 class="md-title" id="md-title">Loading...</h1>
+            
+            <div class="md-meta-row">
+                <div class="md-rating-pill">
+                    <span class="score" id="md-score">0.0</span><span class="out-of">/ 10</span>
+                </div>
+                <div class="md-meta-item">
+                    <span id="md-ratings-count">0 ratings</span>
+                </div>
+                <span class="md-divider">|</span>
+                <div class="md-meta-item">
+                    <i data-lucide="clock"></i>
+                    <span id="md-runtime">0h 0m</span>
+                </div>
+                <div class="md-meta-item">
+                    <i data-lucide="calendar"></i>
+                    <span id="md-year">Year</span>
+                </div>
+                <div class="md-meta-item">
+                    <i data-lucide="globe"></i>
+                    <span id="md-language">Language</span>
+                </div>
+                <div class="md-meta-item age-rating">
+                    <span id="md-certification">PG-13</span>
+                </div>
+            </div>
+            
+            <p class="md-overview" id="md-overview">
+                Loading overview...
+            </p>
+            
+            <div class="md-stats-row">
+                <div class="md-stat">
+                    <span class="md-stat-label">BUDGET</span>
+                    <span class="md-stat-value text-white" id="md-budget">$0</span>
+                </div>
+                <div class="md-stat">
+                    <span class="md-stat-label">BOX OFFICE</span>
+                    <span class="md-stat-value text-gold" id="md-revenue">$0</span>
+                </div>
+            </div>
+            
+            <div class="md-actions">
+                <button class="md-btn primary" id="md-btn-trailer" onclick="playTrailer()">
+                    <i data-lucide="play" fill="currentColor"></i> Watch Trailer
+                </button>
+                <button class="md-btn danger" id="md-btn-list" onclick="toggleFavorite()">
+                    <i data-lucide="plus" id="md-btn-list-icon"></i> <span id="md-btn-list-text">Add to List</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Additional Info Sections -->
+    <section class="md-section md-cast-section">
+        <h3 class="md-section-title"><i data-lucide="user"></i> TOP CAST</h3>
+        <div class="md-cast-list" id="md-cast-list">
+            <!-- Cast items go here -->
+        </div>
+        
+        <div class="md-crew-cards">
+            <div class="md-crew-card">
+                <div class="crew-card-title"><i data-lucide="film"></i> DIRECTOR</div>
+                <div class="crew-card-names" id="md-director"></div>
+            </div>
+            <div class="md-crew-card">
+                <div class="crew-card-title"><i data-lucide="info"></i> WRITERS</div>
+                <div class="crew-card-names" id="md-writers"></div>
+            </div>
+            <div class="md-crew-card">
+                <div class="crew-card-title"><i data-lucide="zap"></i> PRODUCTION</div>
+                <div class="crew-card-names" id="md-production"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="md-section md-gallery-section">
+        <h3 class="md-section-title">GALLERY</h3>
+        <div class="md-gallery-list" id="md-gallery-list">
+            <!-- Gallery images go here -->
+        </div>
+    </section>
+
+    <section class="md-section md-watch-section">
+        <h3 class="md-section-title"><i data-lucide="globe"></i> WHERE TO WATCH</h3>
+        <div class="md-providers-list" id="md-providers-list">
+            <!-- Watch providers go here -->
+        </div>
+    </section>
+
+    <section class="md-section md-reviews-section">
+        <h3 class="md-section-title"><i data-lucide="star"></i> USER REVIEWS</h3>
+        <div class="md-reviews-layout">
+            <div class="md-reviews-summary" id="md-reviews-summary">
+                <!-- Overall rating summary goes here -->
+            </div>
+            <div class="md-reviews-list" id="md-reviews-list">
+                <!-- Review cards go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <div class="logo">
+                <span class="logo-icon"><i data-lucide="film"></i></span>
+                <span class="brand-white">STORY</span><span class="brand-gold">LENS</span>
+            </div>
+            <p>Your ultimate cinematic discovery companion. Find your next obsession.</p>
+            <br>
+            <p>&copy; 2023 StoryLens. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/movieDetails.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

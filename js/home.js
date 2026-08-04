@@ -29,11 +29,11 @@ function Home() {
             .slice(0, 6)
             .forEach(movie => {
             trendingMoviesContainer.innerHTML += `
-                <div class="movie-card">
+                <div class="movie-card" onclick="window.location.href='MovieDetails.html?id=${movie.id}'">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-grid-info">
                         <div class="movie-grid-title">${movie.title}</div>
-                        <div class="movie-grid-meta">
+                        <div class="movie-grid-meta" style="font-size: 12px; color: var(--accent-gold);">
                             <span>⭐ ${movie.vote_average.toFixed(1)}/10</span>
                         </div>
                     </div>
@@ -51,11 +51,11 @@ function Home() {
             .slice(10, 16)
             .forEach(movie => {
             popularMoviesContainer.innerHTML += `
-                <div class="movie-card">
+                <div class="movie-card" onclick="window.location.href='MovieDetails.html?id=${movie.id}'">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-grid-info">
                         <div class="movie-grid-title">${movie.title}</div>
-                        <div class="movie-grid-meta">
+                        <div class="movie-grid-meta" style="font-size: 12px; color: var(--accent-gold);">
                             <span>⭐ ${movie.vote_average.toFixed(1)}/10</span>
                         </div>
                     </div>
@@ -73,11 +73,11 @@ function Home() {
             .slice(0, 6)
             .forEach(movie => {
             topRatedMoviesContainer.innerHTML += `
-                <div class="movie-card">
+                <div class="movie-card" onclick="window.location.href='MovieDetails.html?id=${movie.id}'">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-grid-info">
                         <div class="movie-grid-title">${movie.title}</div>
-                        <div class="movie-grid-meta">
+                        <div class="movie-grid-meta" style="font-size: 12px; color: var(--accent-gold);">
                             <span>⭐ ${movie.vote_average.toFixed(1)}/10</span>
                         </div>
                     </div>
@@ -95,11 +95,11 @@ function Home() {
             .slice(14, 23)
             .forEach(movie => {
             upcomingMoviesContainer.innerHTML += `
-                <div class="movie-card">
+                <div class="movie-card" onclick="window.location.href='MovieDetails.html?id=${movie.id}'">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-grid-info">
                         <div class="movie-grid-title">${movie.title}</div>
-                        <div class="movie-grid-meta">
+                        <div class="movie-grid-meta" style="font-size: 12px; color: var(--accent-gold);">
                             <span>⭐ ${movie.vote_average.toFixed(1)}/10</span>
                         </div>
                     </div>
@@ -117,11 +117,11 @@ function Home() {
             .slice(3, 9)
             .forEach(movie => {
             nowPlayingMoviesContainer.innerHTML += `
-                <div class="movie-card">
+                <div class="movie-card" onclick="window.location.href='MovieDetails.html?id=${movie.id}'">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
                     <div class="movie-grid-info">
                         <div class="movie-grid-title">${movie.title}</div>
-                        <div class="movie-grid-meta">
+                        <div class="movie-grid-meta" style="font-size: 12px; color: var(--accent-gold);">
                             <span>⭐ ${movie.vote_average.toFixed(1)}/10</span>
                         </div>
                     </div>
@@ -147,11 +147,12 @@ function Home() {
                 ${movie.overview.substring(0,150)}...
             </p>
             <div class="hero-actions">
-                <button class="btn-primary">
-                    ▶ Watch Trailer
+                <button class="btn-primary" onclick="window.location.href='MovieDetails.html?id=${movie.id}'">
+                    <i data-lucide="play" fill="currentColor"></i> Watch Trailer
                 </button> 
             </div>
         `;
+        lucide.createIcons();
     }
     renderHero();
 
