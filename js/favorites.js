@@ -10,7 +10,7 @@ function renderFavorites() {
     if (!gridElement) return;
 
     if (favs.length === 0) {
-        gridElement.innerHTML = '<p style="color:var(--text-secondary); padding: 20px;">You have no saved films in your collection.</p>';
+        gridElement.innerHTML = '<div style="grid-column: 1 / -1; display: flex; justify-content: center; padding: 80px 20px;"><p style="color:var(--text-secondary); font-size: 18px; text-align: center;">You have no saved films in your collection.</p></div>';
         return;
     }
     

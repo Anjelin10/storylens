@@ -25,6 +25,7 @@ function Home() {
     getTrendingMovies().then(data => {
         if (data && data.results) {
             const trendingMoviesContainer = document.getElementById("trending-movies");
+            if (!trendingMoviesContainer) return;
             data.results
             .slice(0, 6)
             .forEach(movie => {
@@ -47,6 +48,7 @@ function Home() {
     getPopularMovies().then(data => {
         if (data && data.results) {
             const popularMoviesContainer = document.getElementById("popular-movies");
+            if (!popularMoviesContainer) return;
             data.results
             .slice(10, 16)
             .forEach(movie => {
@@ -69,6 +71,7 @@ function Home() {
     getTopRatedMovies().then(data => {
         if (data && data.results) {
             const topRatedMoviesContainer = document.getElementById("top-rated-movies");
+            if (!topRatedMoviesContainer) return;
             data.results
             .slice(0, 6)
             .forEach(movie => {
@@ -91,6 +94,7 @@ function Home() {
     getUpcomingMovies().then(data => {
         if (data && data.results) {
             const upcomingMoviesContainer = document.getElementById("upcoming-movies");
+            if (!upcomingMoviesContainer) return;
             data.results
             .slice(14, 23)
             .forEach(movie => {
@@ -113,6 +117,7 @@ function Home() {
     getNowPlayingMovies().then(data => {
         if (data && data.results) {
             const nowPlayingMoviesContainer = document.getElementById("now-playing-movies");
+            if (!nowPlayingMoviesContainer) return;
             data.results
             .slice(3, 9)
             .forEach(movie => {
@@ -136,6 +141,7 @@ function Home() {
     if(!data || !data.results) return;
     const hero = document.getElementById("hero");
     const heroContent = document.getElementById("hero-content");
+    if (!hero || !heroContent) return;
     const heroMovies = data.results.slice(1, 6);
     let current = 0;
     function renderHero(){

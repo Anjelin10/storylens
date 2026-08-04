@@ -21,7 +21,7 @@ async function getTopRatedMovies(page = 1) {
         return null;
     }
 }
-getTopRatedMovies()
+
 
 //List of Upcoming Movies
 async function getUpcomingMovies(page = 1) {
@@ -34,7 +34,7 @@ async function getUpcomingMovies(page = 1) {
         return null;
     }
 }
-getUpcomingMovies()
+
 
 //List of Now Playing Movies
 async function getNowPlayingMovies(page = 1) {
@@ -47,7 +47,7 @@ async function getNowPlayingMovies(page = 1) {
         return null;
     }
 }
-getNowPlayingMovies()
+
 
 //List of Trending Movies
 async function getTrendingMovies(page = 1) {
@@ -60,7 +60,7 @@ async function getTrendingMovies(page = 1) {
         return null;
     }
 }
-getTrendingMovies()
+
 
 //Search Movies & Actors
 async function searchMovies(query){
