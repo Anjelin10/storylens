@@ -32,3 +32,8 @@ This project is built using purely native web technologies. No heavy frameworks 
 * **Trailer Integration:** Embedded YouTube trailer playback directly on movie detail pages.
 * **Authentication Mockup:** A local-storage based authentication system with login and registration UI.
 * **Custom UI Components:** Replaces default browser alerts with a fully custom, animated Toast Notification and Confirmation Dialog system.
+
+## Credits
+- Movie data provided by TMDB API.
+- UI inspiration generated using Figma AI and customized during implementation.
+- Icons by Lucide Icons.
