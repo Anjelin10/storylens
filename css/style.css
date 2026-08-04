@@ -638,12 +638,12 @@ img {
 
 /* Search Page Layout */
 .page-header {
-  padding: 60px 5% 40px;
+  padding: 40px 5% 20px;
   text-align: center;
 }
 
 .search-container {
-  max-width: 600px;
+  max-width: 550px;
   margin: 0 auto;
   position: relative;
 }
@@ -655,7 +655,7 @@ img {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
-  font-size: 18px;
+  font-size: 12px;
   font-family: var(--font-body);
 }
 
@@ -1424,40 +1424,42 @@ img {
 /* Responsive adjustments */
 @media (max-width: 900px) {
   .nav-links {
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 250px;
-    height: 100vh;
-    background: var(--bg-component);
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    height: auto;
+    background: rgba(11, 11, 15, 0.95);
+    backdrop-filter: blur(12px);
     flex-direction: column;
-    padding: 80px 20px;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
-    transition: right 0.3s ease;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: scale(0.95);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
     z-index: 100;
   }
 
   .nav-links ul {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
 
   .nav-links.active {
-    right: 0;
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
   }
 
   .mobile-menu-btn {
     display: flex;
   }
 
-  .nav-links.active+.actions .mobile-menu-btn {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
   .mobile-close-btn {
-    display: block !important;
+    display: none !important;
   }
 
   .user-menu {
@@ -1490,10 +1492,6 @@ img {
 }
 
 @media (max-width: 600px) {
-  .nav-links {
-    width: 100%;
-    right: -100%;
-  }
 
   .md-title {
     font-size: 32px;
@@ -1514,16 +1512,20 @@ img {
   }
 
   .hero {
-    height: 480px;
+    height: 700px;
     padding-top: 60px;
     background-image: var(--hero-bg-mobile);
     background-position: top center;
   }
 
   .hero-content {
-    padding: 20px;
-    max-width: 90%;
+    padding: 30px 20px;
+    max-width: 95%;
     text-align: left;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 
   .movie-card {
@@ -1563,5 +1565,22 @@ img {
     flex-wrap: nowrap;
     gap: 10px;
     width: 100%;
+  }
+
+  .filters-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+  }
+
+  .filters-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-pill {
+    font-size: 12px;
+    padding: 8px 16px;
+    white-space: nowrap;
   }
 }
