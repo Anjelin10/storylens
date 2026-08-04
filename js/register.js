@@ -8,27 +8,37 @@ function register() {
         const res = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return res.test(email);
     }
+    
+    const showMsg = (msg, type) => {
+        if(window.showToast) window.showToast(msg, type);
+        else alert(msg);
+    };
+
     if (!validateEmail(email)) {
-        alert("Please enter a valid email address!");
+        showMsg("Please enter a valid email address!", "error");
         return;
     }
     if (!name || !email || !password) {
-        alert("Please fill in all fields!");
+        showMsg("Please fill in all fields!", "error");
         return;
     }
     if (password !== confirmPassword) {
-        alert("Passwords do not match!");
+        showMsg("Passwords do not match!", "error");
         return;
     }
     if (!termsCheckbox.checked) {
-        alert("You must agree to the Terms & Privacy Policy!");
+        showMsg("You must agree to the Terms & Privacy Policy!", "warning");
         return;
     }
-    addEventListener('click', function() {
-        alert("Registration successful! Please log in.");
-    });
+    
     console.log("Registration data:", { name, email, password });
     localStorage.setItem('user', JSON.stringify({ name, email, password }));
     sessionStorage.setItem("currentUser", JSON.stringify({ name, email }));
-    window.location.href = 'login.html';
+    
+    showMsg("Registration successful! Please log in.", "success");
+    if(window.showToast) {
+        setTimeout(() => { window.location.href = 'login.html'; }, 1500);
+    } else {
+        window.location.href = 'login.html';
+    }
 }

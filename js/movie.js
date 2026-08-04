@@ -1,24 +1,24 @@
 //AVATAR AND DROPDOWN
- const userAvatar = document.getElementById("user-avatar");
-    const userDropdown = document.getElementById("user-dropdown");
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    if (storedUser) {
-        userAvatar.textContent = storedUser.name.charAt(0).toUpperCase();
-        userAvatar.addEventListener("click", () => {
-            userDropdown.classList.toggle("show");
-        });
-    } else {
-        userAvatar.innerHTML ='<i data-lucide="user"></i>';
-        lucide.createIcons();
-        userAvatar.addEventListener("click", () => {
-            window.location.href = "login.html";
-        });
-    }
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".user-menu")) {
-            userDropdown.classList.remove("show");
-        }
+const userAvatar = document.getElementById("user-avatar");
+const userDropdown = document.getElementById("user-dropdown");
+const storedUser = JSON.parse(localStorage.getItem("user"));
+if (storedUser) {
+    userAvatar.textContent = storedUser.name.charAt(0).toUpperCase();
+    userAvatar.addEventListener("click", () => {
+        userDropdown.classList.toggle("show");
     });
+} else {
+    userAvatar.innerHTML ='<i data-lucide="user"></i>';
+    lucide.createIcons();
+    userAvatar.addEventListener("click", () => {
+        window.location.href = "login.html";
+    });
+}
+document.addEventListener("click", (e) => {
+    if (!e.target.closest(".user-menu")) {
+        userDropdown.classList.remove("show");
+    }
+});
 
 //MOVIE GRID
 const movieContainer = document.getElementById("movie-container");
@@ -66,14 +66,14 @@ async function loadMovies(page = 1) {
     let movies = [];
     movies = data.results;
     const searchInput = document.getElementById("search-input");
-    searchInput.addEventListener("input",(e)=>{
-    const text = e.target.value.toLowerCase();
-    const filtered = movies.filter(movie=>{
-        return movie.title
-        .toLowerCase()
-        .includes(text);
-    });
-    renderMovies(filtered);
+    searchInput.addEventListener("input", (e) => {
+        const text = e.target.value.toLowerCase();
+        const filtered = movies.filter(movie => {
+            return movie.title
+                .toLowerCase()
+                .includes(text);
+        });
+        renderMovies(filtered);
     });
 }
 

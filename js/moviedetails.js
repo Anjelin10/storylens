@@ -283,9 +283,11 @@ window.toggleFavorite = function() {
                 poster_path: currentMovieData.poster_path,
                 vote_average: currentMovieData.vote_average
             });
+            if (window.showToast) window.showToast(`Added ${currentMovieData.title} to your list!`, "success");
         }
     } else {
         favs = favs.filter(fav => fav.id !== currentMovieData.id);
+        if (window.showToast) window.showToast(`Removed ${currentMovieData.title} from your list.`, "info");
     }
     localStorage.setItem('favorites', JSON.stringify(favs));
     updateFavoriteButton();

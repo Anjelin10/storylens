@@ -136,11 +136,12 @@ function Home() {
     if(!data || !data.results) return;
     const hero = document.getElementById("hero");
     const heroContent = document.getElementById("hero-content");
-    const heroMovies = data.results.slice(1, 4);
+    const heroMovies = data.results.slice(1, 6);
     let current = 0;
     function renderHero(){
         const movie = heroMovies[current];
-        hero.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`;
+        hero.style.setProperty('--hero-bg-desktop', `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`);
+        hero.style.setProperty('--hero-bg-mobile', `url(https://image.tmdb.org/t/p/original${movie.poster_path})`);
         heroContent.innerHTML = `
             <h1>${movie.title}</h1>
             <p class="hero-overview">
