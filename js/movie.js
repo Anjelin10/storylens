@@ -86,7 +86,6 @@ if (searchInput) {
                 try {
                     const data = await searchMovies(text);
                     if (data && data.results) {
-                        // Extract movies from search/multi (handle person known_for, and standard movies)
                         let extractedMovies = [];
                         data.results.forEach(item => {
                             if (item.media_type === 'movie') {
@@ -98,7 +97,6 @@ if (searchInput) {
                             }
                         });
                         
-                        // Deduplicate movies by id
                         const uniqueMovies = Array.from(new Map(extractedMovies.map(m => [m.id, m])).values());
                         
                         if (uniqueMovies.length > 0) {

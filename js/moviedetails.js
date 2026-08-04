@@ -244,7 +244,6 @@ async function renderMovieDetails() {
             }
         }
         
-        // Re-initialize icons for newly added elements
         if(typeof lucide !== 'undefined') {
             lucide.createIcons();
         }

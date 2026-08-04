@@ -30,8 +30,6 @@ function register() {
         showMsg("You must agree to the Terms & Privacy Policy!", "warning");
         return;
     }
-    
-    console.log("Registration data:", { name, email, password });
     localStorage.setItem('user', JSON.stringify({ name, email, password }));
     sessionStorage.setItem("currentUser", JSON.stringify({ name, email }));
     

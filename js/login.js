@@ -19,12 +19,12 @@ function login() {
     }
     
     if(window.showToast) {
-        window.showToast(`Welcome, ${storedUser.name}! Login successful!`, "success");
+        window.showToast(`Login successful! Welcome, ${storedUser.name}`, "success");
         setTimeout(() => {
             window.location.href = 'index.html';
         }, 1500);
     } else {
-        alert(`Welcome, ${storedUser.name}! Login successful!`);
+        alert(`Login successful! Welcome, ${storedUser.name}`);
         window.location.href = 'index.html';
     }
 }
